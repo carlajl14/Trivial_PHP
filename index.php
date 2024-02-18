@@ -30,6 +30,18 @@
                         ?>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="category">Dificultad</label>
+                    <select class="form-control" name="difficulty">
+                        <option value="">Elige la dificultad</option>
+                        <?php
+                        //Obtener la dificultad
+                        echo '<option value="easy">Easy</option>';
+                        echo '<option value="medium">Medium</option>';
+                        echo '<option value="hard">Hard</option>';
+                        ?>
+                    </select>
+                </div>
                 <input type="submit" name="start" value="Comenzar" class="btn btn-primary">
             </form>
         </div>
