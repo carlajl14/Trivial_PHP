@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(0, 10, 69);
+    color: white;
+}
+
+.boton {
+    background: linear-gradient(185deg, rgba(185,24,24,1) 0%, rgba(199,214,46,1) 25%, rgba(110,182,54,1) 44%, rgba(66,134,129,1) 61%, rgba(54,54,111,1) 74%, rgba(70,46,99,1) 86%, rgba(85,36,81,1) 100%);
+    border: none;
+}

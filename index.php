@@ -5,6 +5,7 @@
         <title>Trivial</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="https://kit.fontawesome.com/45d72edd49.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
         <div class="container">
@@ -15,7 +16,7 @@
                     <input type="number" name="amount" class="form-control" min="1" max="50">
                 </div>
                 <div class="form-group mt-2">
-                    <label for="category">Categoría</label>
+                    <label for="category">Categoría:</label>
                     <select class="form-control" name="category">
                         <option value="">Elige una categoría</option>
                         <?php
@@ -31,7 +32,7 @@
                     </select>
                 </div>
                 <div class="form-group mt-2">
-                    <label for="category">Dificultad</label>
+                    <label for="category">Dificultad:</label>
                     <select class="form-control" name="difficulty">
                         <option value="">Elige la dificultad</option>
                         <?php
@@ -42,7 +43,7 @@
                         ?>
                     </select>
                 </div>
-                <input type="submit" name="start" value="Comenzar" class="btn btn-primary mt-2">
+                <input type="submit" name="start" value="Comenzar" class="btn btn-primary mt-2 boton">
             </form>
             <?php
             //Comprobar si los parámetros se han elegido
@@ -56,19 +57,19 @@
                 $dataQuestions = json_decode($questions, true);
                 $cont = 0;
                 
+                echo '<h2 class="mt-2">Preguntas</h2>';
                 //Recorrer el array de datos
                 foreach ($dataQuestions['results'] as $data) {
-                    echo '<h2>Preguntas</h2>';
                     $cont++;
                     echo '<h3>Pregunta ' . $cont . '</h3>';
                     echo $data['question'] . '<br>';
-                    echo '<ul>';
+                    echo '<ol type="A">';
                     echo '<li>' . $data['correct_answer'] . '</li>';
                     //Recorrer el subarray
                     foreach($data['incorrect_answers'] as $incorrect) {
                         echo '<li>' . $incorrect . '</li>';
                     }
-                    echo '</ul>';
+                    echo '</ol>';
                 }
             }
             ?>
